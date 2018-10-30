@@ -28,7 +28,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  addItem: item => dispatch({ type: "INCREASE_COUNT", item })
+  addItem: () => {
+      dispatch(addItem())
+    }
+  };
   };
 };
 
