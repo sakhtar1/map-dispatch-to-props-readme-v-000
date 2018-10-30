@@ -6,7 +6,7 @@ import { addItem } from  './actions/items';
 class App extends Component {
 
   handleOnClick() {
-    this.props.store.dispatch(addItem());
+    this.props.addItem();
   }
 
   render() {
@@ -27,4 +27,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  addItem: item => dispatch({ type: "INCREASE_COUNT", item })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
